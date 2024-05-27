@@ -1,0 +1,14 @@
+<div class="post-card">
+  <h1><%= @post.title %></h1>
+  <p><%= @post.content %></p>
+
+<h2>Комментарии</h2>
+<% @post.comments.each do |comment| %>
+  <p><strong><%= comment.user.email %>:</strong> <%= comment.content %></p>
+<% end %>
+
+<% if user_signed_in? %>
+  <h3>Добавить комментарий:</h3>
+  <%= render 'comments/form' %>
+<% end %>
+</div>

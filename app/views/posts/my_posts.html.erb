@@ -1,0 +1,58 @@
+<h1>Мои посты</h1>
+
+<div class="actions">
+  <%= link_to 'Создать новый пост', new_post_path, class: 'btn btn-primary' %>
+</div>
+
+<div class="posts-list">
+  <% @posts.each do |post| %>
+    <div class="post-card">
+      <h2><%= link_to post.title, post_path(post) %></h2>
+      <p><%= post.content %></p>
+      <div class="post-actions">
+        <%= link_to 'Редактировать', edit_post_path(post), class: 'btn btn-primary' %>
+        <%= button_to 'Удалить', post_path(post), method: :delete, data: { confirm: 'Вы уверены, что хотите удалить этот пост?' }, class: 'btn btn-danger' %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<style>
+  .actions {
+    margin-bottom: 20px;
+  }
+  .posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .post-card {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .post-card h2 {
+    margin-top: 0;
+  }
+  .post-actions {
+    margin-top: 10px;
+  }
+  .btn {
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 3px;
+    margin-right: 10px;
+  }
+  .btn-primary {
+    background-color: #007bff;
+    color: white;
+  }
+  .btn-secondary {
+    background-color: #6c757d;
+    color: white;
+  }
+  .btn-danger {
+    background-color: #dc3545;
+    color: white;
+  }
+</style>

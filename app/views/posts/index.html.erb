@@ -1,0 +1,13 @@
+<h1>Посты</h1>
+<div class="wrapper">
+  <%= link_to 'Все посты', posts_path, class: 'btn btn-secondary', style: 'position: absolute; right: 10px; top: 10px;' %>
+  <div class="post-card">
+  <% @posts.each do |post| %>
+    <h2><%= link_to post.title, post_path(post) %></h2>
+    <p><%= post.content.truncate(100) %></p>
+  <% end %>
+  </di>
+  <% if user_signed_in? %>
+    <%= link_to 'Новый пост', new_post_path, class: 'btn btn-primary' %>
+  <% end %>
+</div>

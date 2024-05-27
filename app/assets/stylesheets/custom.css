@@ -1,0 +1,98 @@
+/* custom.css */
+h1{
+  text-align: center;
+}
+
+body {
+    background-color: #6b94a8;
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .wrapper {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .actions {
+    margin-bottom: 20px;
+  }
+  
+  .posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .post-card {
+    text-align: left;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgb(212, 212, 212);
+    color: black;
+  }
+  
+  .post-card h2 {
+    margin-top: 0;
+  }
+  
+  .post-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px; 
+    justify-content: center; 
+    align-items: center;
+  }
+  
+  .btn {
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 3px;
+    margin-right: 10px;
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+  }
+  
+
+  .field {
+    margin-bottom: 15px;
+  }
+  
+  .field label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .field input[type="text"],
+  .field textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .field textarea {
+    height: 150px;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
