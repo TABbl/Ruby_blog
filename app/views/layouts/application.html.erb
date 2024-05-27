@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= stylesheet_link_tag 'custom', media: 'all' %> 
+</head>
+<body>
+  <div class="wrapper">
+    <% if user_signed_in? %>
+      <%= link_to 'Выход', destroy_user_session_path, method: :delete %>
+      <%= link_to 'Мои посты', my_posts_posts_path %>
+    <% else %>
+      <%= link_to 'Вход', new_user_session_path %>
+      <%= link_to 'Регистрация', new_user_registration_path %>
+    <% end %>
+    <%= link_to 'Все посты', posts_path, class: 'btn btn-secondary', style: 'position: absolute; right: 10px; top: 10px;' %>
+    <%= yield %>
+  </div>
+</body>
+</html>
